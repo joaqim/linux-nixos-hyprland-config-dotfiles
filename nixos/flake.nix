@@ -1,5 +1,5 @@
 {
-  description = "XNM's NixOS Configuration";
+  description = "jq's NixOS Configuration";
 
   inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,13 +8,11 @@
 
   outputs = { nixpkgs, ... } @ inputs:
   {
-    nixosConfigurations.isitreal-laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.jq-nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-        # ./fingerprint-scanner.nix
-        ./yubikey.nix
         ./sound.nix
         ./usb.nix
         ./time.nix
@@ -38,11 +36,9 @@
         ./environment-variables.nix
         ./bluetooth.nix
         ./networking.nix
-        # ./mac-randomize.nix
         # ./open-ssh.nix
         ./firewall.nix
         ./dns.nix
-        # ./vpn.nix
         ./users.nix
         ./virtualisation.nix
         ./programming-languages.nix

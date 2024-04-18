@@ -3,16 +3,17 @@
 {
   # Select internationalisation properties.
   services.xserver = {
-    xkb.layout = "us,ua,ru";
-    xkb.options = "grp:alt_shift_toggle";
+    xkb.layout = "us,se";
+    xkb.variant = "dvorak-programmer";
+    xkb.options = "caps:escape_shifted_compose,compose:menu";
+
   };
-  
+
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
-    "uk_UA.UTF-8/UTF-8"
-    "ru_RU.UTF-8/UTF-8"
+    "sv_SE.UTF-8/UTF-8"
   ];
-  
+
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -32,7 +33,6 @@
     hyphen
     hunspell
     hunspellDicts.en_US
-    hunspellDicts.uk_UA
-    hunspellDicts.ru_RU
+    hunspellDicts.sv_SE
   ];
 }
